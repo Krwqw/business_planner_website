@@ -10,16 +10,8 @@ p {
     /* text-indent: 200px; */
   }
 
-
-/* .inner-div {
-    /* height: 100px;
-    width: 200px;
-    margin: 10px; */
-    /* background-color: #096eeb; */
-
-
 .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /*как расположены элементы относительно пространства*/
 }
 
