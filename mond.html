@@ -9,15 +9,17 @@
     /* border: 5px solid rgb(0, 0, 0); рамка фона у слова "задачи" */
     text-align: center; /*где расположен текст*/
     color: rgb(182, 72, 129); /*цвет самого текста */
-    font-size: 300%; /*размер текста*/
+    font-size: 200%; /*размер текста*/
     padding: 10px; /* ширина фона */
     background-color: rgba(182, 72, 129, 0.411); /*цвет фона текста*/
+    font-family: Comic Sans MS, Comic Sans, cursive; /*шрифт текста*/
    }
    h2 {
     border: 5px solid rgb(182, 72, 129);
     padding: 10px; /* ширина фона (рамки) */
     color: rgb(182, 72, 129); /*цвет рамки*/
     font-size: 200%; /*размер текста*/
+    font-family: Comic Sans MS, Comic Sans, cursive; /*шрифт текста*/
    }
 </style>
 <style>
@@ -37,34 +39,28 @@ color: 	rgb(182, 72, 129); /* Цвет ссылок*/
         .colortext {
         background-color: rgb(243,205,205); /* Цвет фона */
         color: rgb(182, 72, 129); /* Цвет текста */
+        font-family: Comic Sans MS, Comic Sans, cursive; /*шрифт текста*/
         }
 
     </style>
-    <link rel="stylesheet" href="indentation.css"/> <!--стиль трёх верхних слов -->
-
-    <link rel="stylesheet" href="tri_clova_stily.css"/> <!--ссылка на расположение трёх слов -->
+    <link rel="stylesheet" href="tri_clova_stily.css"/> <!--ссылка на расположение и стиль трёх слов -->
     <div class="tri_clova_stily"><!-- DIV используется для группировки контента, что позволяет легко его стилизовать,
         используя атрибуты class или id, помечать раздел документа, написанный на разных языках (используя атрибут lang), и так далее. -->
         <div class="inner-div">
-            
-            <a href="diary.html"><p>Back</p></a>
+            <a href="diary.html"><p>Home</p></a>
         </div>
         <div class="inner-div">
             <p>Monday</p>
         </div>
         <div class="inner-div">
-           
             <a href="vt.html"><p>Tuesday</p></a>
         </div>
       </div>
-
-<!-- 
-    <h1>Tasks</h1> -->
-
-
     <form>
-        <link rel="stylesheet" href="container.css"/>
-        <label><h1>Tasks</h1>
+
+        <label><h1>Tasks <font-family= Marker Felt, fantasy;></font-family></h1>
+            <link rel="stylesheet" href="tri_clova_stily.css"/>
+            <!-- лабель - связывает текст с определённым элементом формы. -->
             <h2>1. <input type="text" class="colortext" style="width: 200px; height: 35px";> </h2>
             <h2>2. <input type="text" class="colortext" style="width: 200px; height: 35px";> </h2>
             <h2>3. <input type="text" class="colortext" style="width: 200px; height: 35px";> </h2>

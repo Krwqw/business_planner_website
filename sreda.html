@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список задач</title>
+    <style>
+        .completed {
+            text-decoration: line-through; /* Зачёркивает текст */
+        }
+    </style>
+    <script>
+        function addTask() {
+            const taskInput = document.getElementById('taskInput'); /*Возвращает ссылку на элемент по его идентификатору (ID); 
+                                                                    идентификатор является строкой, которая может быть использована для идентификации элемента*/
+            const taskText = taskInput.value;
+            if (taskText.trim() === '') return;
+
+            const taskList = document.getElementById('taskList');
+            const taskItem = document.createElement('div');
+
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.onclick = function() {
+                taskTextSpan.classList.toggle('completed', checkbox.checked);
+            };
+
+            const taskTextSpan = document.createElement('span');
+            taskTextSpan.textContent = taskText;
+
+            taskItem.appendChild(checkbox);
+            taskItem.appendChild(taskTextSpan);
+            taskList.appendChild(taskItem);
+
+            taskInput.value = ''; // очищает поле ввода
+        }
+    </script>
+</head>
+<body>
+    <h2>Добавить задачу</h2>
+    
+    <input type="text" id="taskInput" placeholder="Введите задачу">
+    <button onclick="addTask()">Добавить</button>
+    <p>
+
+
+        
+    </p>
+    <div id="taskList"></div>
+</body>
+</html>

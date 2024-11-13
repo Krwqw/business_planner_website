@@ -2,7 +2,7 @@ p {
     /*padding-top: 0px; /* отступ сверху*/
     margin: 12px; /*внешний отступ на всех четырёх сторонах элемента*/
     font-size: 45px; /*размер шрифта*/
-    font-family: Marker Felt, fantasy; /*шрифт текста*/
+    font-family: Comic Sans MS, Comic Sans, cursive; /*шрифт текста*/
     color: rgb(182, 72, 129); 
     text-align: center; /*выравнивание текста */
     vertical-align: middle; /*выравнивает текстовые элементы по вертикали относительно друг друга.*/
@@ -12,7 +12,7 @@ p {
 .inner-div {
     /*height: 100px; /*высота*/
     /*width: 2000px; /*ширина фона трёх слов*/
-    margin: 10px; /* отступ сверху*/
+    margin: 0%; /* отступ сверху*/
     /*background-color: #096eeb; /*цвет фона текста*/ 
   }
 .tri_clova_stily {
