@@ -15,19 +15,15 @@
                                                                     идентификатор является строкой, которая может быть использована для идентификации элемента*/
             const taskText = taskInput.value;
             if (taskText.trim() === '') return;
-
             const taskList = document.getElementById('taskList');
             const taskItem = document.createElement('div');
-
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
             checkbox.onclick = function() {
                 taskTextSpan.classList.toggle('completed', checkbox.checked);
             };
-
             const taskTextSpan = document.createElement('span');
             taskTextSpan.textContent = taskText;
-
             taskItem.appendChild(checkbox);
             taskItem.appendChild(taskTextSpan);
             taskList.appendChild(taskItem);
@@ -42,9 +38,6 @@
     <input type="text" id="taskInput" placeholder="Введите задачу">
     <button onclick="addTask()">Добавить</button>
     <p>
-
-
-        
     </p>
     <div id="taskList"></div>
 </body>

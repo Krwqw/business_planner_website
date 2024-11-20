@@ -19,19 +19,66 @@
     padding: 10px; /* ширина фона (рамки) */
     color: rgb(182, 72, 129); /*цвет рамки*/
     font-size: 200%; /*размер текста*/
+    text-indent: 15px; /*размер отступа перед строкой в текстовом блоке*/
     font-family: Comic Sans MS, Comic Sans, cursive; /*шрифт текста*/
    }
 </style>
 <style>
     a {
-color: 	rgb(182, 72, 129); /* Цвет ссылок*/
+color: 	#b64881; /* Цвет ссылок*/
 }
 </style>
+<!-- добавление задач -->
+<style>
+    .completed {
+        text-decoration: line-through; /* Зачёркивает текст */
+    }
+
+    input[type="checkbox"]:checked:before {
+ border-color: #b64881;  
+ background-color: #ECEABE; 
+ background-size: 100%; 
+ background-repeat: no-repeat;
+ background-position: center;
+}
+input[type="checkbox"]:before {
+    content: "";
+    display: inline-block;
+    width: 12px; /* ширина */
+    height: 12px; /* высота */
+    background-color: #b64881; /* цвет фона */
+    border: 1px solid #f3cdcd; /* ширина и цвет рамки */
+    /* border-radius: 6px; скругление углов */
+}
+</style>
+<script>
+    function addTask() {
+        const taskInput = document.getElementById('taskInput'); /*Возвращает ссылку на элемент по его идентификатору (ID); 
+                                                                идентификатор является строкой, которая может быть использована для идентификации элемента*/
+        const taskText = taskInput.value;
+        if (taskText.trim() === '') return;
+        const taskList = document.getElementById('taskList');
+        const taskItem = document.createElement('div');
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.onclick = function() {
+            taskTextSpan.classList.toggle('completed', checkbox.checked);
+        };
+        const taskTextSpan = document.createElement('span');
+        taskTextSpan.textContent = taskText;
+        taskItem.appendChild(checkbox);
+        taskItem.appendChild(taskTextSpan);
+        taskList.appendChild(taskItem);
+
+        taskInput.value = ''; // очищает поле ввода
+    }
+</script>
+
 </head>
 <body>
     <style>
         body{
-            background-color: rgb(243,205,205); /* Цвет фона */
+            background-color: #f3cdcd; /* Цвет фона */
             
         }
     </style>
@@ -60,13 +107,19 @@ color: 	rgb(182, 72, 129); /* Цвет ссылок*/
 
         <label><h1>Tasks <font-family= Marker Felt, fantasy;></font-family></h1>
             <link rel="stylesheet" href="tri_clova_stily.css"/>
-            <!-- лабель - связывает текст с определённым элементом формы. -->
+            <!-- лабель - связывает текст с определённым элементом формы.
             <h2>1. <input type="text" class="colortext" style="width: 200px; height: 35px";> </h2>
             <h2>2. <input type="text" class="colortext" style="width: 200px; height: 35px";> </h2>
             <h2>3. <input type="text" class="colortext" style="width: 200px; height: 35px";> </h2>
-            <h2>4. <input type="text" class="colortext" style="width: 200px; height: 35px";> </h2>
+            <h2>4. <input type="text" class="colortext" style="width: 200px; height: 35px";> </h2> -->
         </label>
       </form>
 
+
+
+ <h2>Добавить задачу:  <input type="text" id="taskInput" class="colortext" style="width: 200px; height: 35px";>  <button onclick="addTask()"> Добавить</button></h2>
+    
+    <h2>
+    <div id=  "taskList"></div></h2>
 </body>
 </html>
