@@ -1,20 +1,132 @@
-
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Список дел</title>
-<link rel=»stylesheet» type=»text/css» href=»styles.css»>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diary</title>
+<style>
+    h1 {
+    /* border: 5px solid rgb(0, 0, 0); рамка фона у слова "задачи" */
+    text-align: center; /*где расположен текст*/
+    color: rgb(182, 72, 129); /*цвет самого текста */
+    font-size: 200%; /*размер текста*/
+    padding: 10px; /* ширина фона */
+    background-color: rgba(182, 72, 129, 0.411); /*цвет фона текста*/
+    font-family: Comic Sans MS, Comic Sans, cursive; /*шрифт текста*/
+   }
+   h2 {
+    border: 5px solid rgb(182, 72, 129);
+    padding: 10px; /* ширина фона (рамки) */
+    color: rgb(182, 72, 129); /*цвет рамки*/
+    font-size: 200%; /*размер текста*/
+    text-indent: 15px; /*размер отступа перед строкой в текстовом блоке*/
+    font-family: Comic Sans MS, Comic Sans, cursive; /*шрифт текста*/
+   }
+   h5 {
+    text-align: center;
+   }
+</style>
+<style>
+    a {
+color: 	#b64881; /* Цвет ссылок*/
+}
+</style>
+<!-- добавление задач -->
+<style>
+    .completed {
+        text-decoration: line-through; /* Зачёркивает текст */
+    }
+
+    input[type="checkbox"]:checked:before {
+ border-color: #b64881;  
+ background-color: #ECEABE; 
+ background-size: 100%; 
+ background-repeat: no-repeat;
+ background-position: center;
+}
+input[type="checkbox"]:before {
+    content: "";
+    display: inline-block;
+    width: 12px; /* ширина */
+    height: 12px; /* высота */
+    background-color: #b64881; /* цвет фона */
+    border: 1px solid #f3cdcd; /* ширина и цвет рамки */
+    /* border-radius: 6px; скругление углов */
+}
+</style>
+<script>
+    function addTask() {
+        const taskInput = document.getElementById('taskInput'); /*Возвращает ссылку на элемент по его идентификатору (ID); 
+                                                                идентификатор является строкой, которая может быть использована для идентификации элемента*/
+        const taskText = taskInput.value;
+        if (taskText.trim() === '') return;
+        const taskList = document.getElementById('taskList');
+        const taskItem = document.createElement('div');
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.onclick = function() {
+            taskTextSpan.classList.toggle('completed', checkbox.checked);
+        };
+        const taskTextSpan = document.createElement('span');
+        taskTextSpan.textContent = taskText;
+        taskItem.appendChild(checkbox);
+        taskItem.appendChild(taskTextSpan);
+        taskList.appendChild(taskItem);
+
+        taskInput.value = ''; // очищает поле ввода
+    }
+</script>
+
 </head>
 <body>
-<h1>Список дел</h1>
-<div id=»app»>
-<input type=»text» id=»taskInput» placeholder=»Добавить задачу»>
-<button id=»addTask»>Добавить</button>
-<ul id=»taskList»>
-<!— Здесь будут отображаться задачи —>
-</ul>
-</div>
-<script src=»script.js»></script>
+    <style>
+        body{
+            background-color: #f3cdcd; /* Цвет фона */
+            
+        }
+    </style>
+    <style>
+        .colortext {
+        background-color: rgb(243,205,205); /* Цвет фона */
+        color: rgb(182, 72, 129); /* Цвет текста */
+        font-family: Comic Sans MS, Comic Sans, cursive; /*шрифт текста*/
+        }
+
+    </style>
+    <link rel="stylesheet" href="tri_clova_stily.css"/> <!--ссылка на расположение и стиль трёх слов -->
+    <div class="tri_clova_stily"><!-- DIV используется для группировки контента, что позволяет легко его стилизовать,
+        используя атрибуты class или id, помечать раздел документа, написанный на разных языках (используя атрибут lang), и так далее. -->
+        <div class="inner-div">
+            <a href="diary.html"><p>Dom</p></a>
+        </div>
+        <div class="inner-div">
+            <p>Chetwerg</p>
+        </div>
+        <div class="inner-div">
+            <a href="ptc.html"><p>Piatnica</p></a>
+        </div>
+      </div>
+  
+    <form>
+
+        <label><h1>Tasks <font-family= Marker Felt, fantasy;></font-family></h1>
+            <link rel="stylesheet" href="tri_clova_stily.css"/>
+            <!-- лабель - связывает текст с определённым элементом формы.
+            <h2>1. <input type="text" class="colortext" style="width: 200px; height: 35px";> </h2>
+            <h2>2. <input type="text" class="colortext" style="width: 200px; height: 35px";> </h2>
+            <h2>3. <input type="text" class="colortext" style="width: 200px; height: 35px";> </h2>
+            <h2>4. <input type="text" class="colortext" style="width: 200px; height: 35px";> </h2> -->
+        </label>
+      </form>
+
+
+
+ <h2>Добавить задачу:  <input type="text" id="taskInput" class="colortext" style="width: 200px; height: 35px";>  <button onclick="addTask()"> Добавить</button></h2>
+    
+    <h2>
+    <div id=  "taskList"></div></h2>
+    <h5><img src="C:\Users\User\Desktop\Надеждины приложения\GIT\repositori\img\cht.jpg" width=700px alight = center alt="kot"></h5>
+
+
 </body>
 </html>
